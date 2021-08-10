@@ -19,7 +19,8 @@ class Lsl < Formula
   # 4 - Copy the printed information into this block. git add and push this updated formula.
   bottle do
     root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.15.0"
-    sha256 cellar: :any, big_sur: "bcbb98b75da8a609eb865a1813135e6290d0f06e22ecfa60a4935f7712c9453d"
+    rebuild 1
+    sha256 cellar: :any, big_sur: "8fc06564bd013f15150a3eabbd7606f49fe5bd3360e7da7efa0d2bc8542df396"
   end
 
   depends_on "cmake" => :build
