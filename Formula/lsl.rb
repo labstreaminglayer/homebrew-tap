@@ -3,23 +3,23 @@ class Lsl < Formula
   desc "Library for multi-modal time-synched data transmission over the network"
   homepage "https://labstreaminglayer.readthedocs.io/"
   url "https://github.com/sccn/liblsl", using: :git
-  version "1.14.1b9"
-  sha256 "4de0d9726f00430b0f7bda38c44fb40d09461e9aec38fb17b00640f996a2f784"
+  version "1.15.0"
+  sha256 "7b0c927fba9875c2eb930e5347a339f0aef750291e94045c3f8dbc6e5112d4a5"
   license "MIT"
   revision 0
-  # NOTE: use `openssl dgst -sha256 <file>` to get sha256
+  # NOTE: use `openssl dgst -sha256 <targ.gz file downloaded from release>` to get sha256
 
   head "https://github.com/sccn/liblsl.git"
 
   # To make a bottle:
   # 1 - `brew install --build-bottle lsl`
-  # 2 - `brew bottle --root-url="https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.14" lsl`
+  # 2 - `brew bottle --root-url="https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.15.0" lsl`
   # 3 - Upload produced bottle to GH release page above. If there's a double-dash in the filename
   #     then you have to remove that first.
   # 4 - Copy the printed information into this block. git add and push this updated formula.
   bottle do
-    root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.14"
-    sha256 cellar: :any, big_sur: "9e3f0222d5a586ee2d79c20dcc604e239a783dc340407cd71fdaa2b5b5256211"
+    root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.15.0"
+    sha256 cellar: :any, big_sur: "bcbb98b75da8a609eb865a1813135e6290d0f06e22ecfa60a4935f7712c9453d"
   end
 
   depends_on "cmake" => :build
