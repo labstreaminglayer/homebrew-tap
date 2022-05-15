@@ -17,12 +17,12 @@ class Lsl < Formula
   # 3 - Upload produced bottle to GH release page above. If there's a double-dash in the filename
   #     then you have to remove that first.
   # 4 - Copy the printed information into this block. git add and push this updated formula.
-# Commented out until we can build bottles that are signed and certified.
-#  bottle do
-#    root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.15.0"
-#    rebuild 1
-#    sha256 cellar: :any, big_sur: "8fc06564bd013f15150a3eabbd7606f49fe5bd3360e7da7efa0d2bc8542df396"
-#  end
+  # Commented out until we can build bottles that are signed and certified.
+  # bottle do
+  #   root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.15.0"
+  #   rebuild 1
+  #   sha256 cellar: :any, big_sur: "8fc06564bd013f15150a3eabbd7606f49fe5bd3360e7da7efa0d2bc8542df396"
+  # end
 
   depends_on "cmake" => :build
 
