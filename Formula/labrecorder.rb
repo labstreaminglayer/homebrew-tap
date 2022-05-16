@@ -23,7 +23,7 @@ class Labrecorder < Formula
     system "cmake", "-S", ".", "-B", "build", "-DLSL_DEPLOYAPPLIBS=OFF", *std_cmake_args
     system "cmake", "--build", "build", "--target", "install", "--config", "Release", "-j"
     # Next line required because macdeployqt does not bundle loader_path dependencies: https://bugreports.qt.io/browse/QTBUG-100686
-    system "cp", "-L", "/opt/homebrew/opt/brotli/lib/libbrotlicommon.1.dylib", ENV['HOMEBREW_FORMULA_PREFIX']"/LabRecorder/LabRecorder.app/Contents/Frameworks"
+    # system "cp", "-L", "/opt/homebrew/opt/brotli/lib/libbrotlicommon.1.dylib", ENV['HOMEBREW_FORMULA_PREFIX']/LabRecorder/LabRecorder.app/Contents/Frameworks
   end
 
   test do
