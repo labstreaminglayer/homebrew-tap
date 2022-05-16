@@ -1,16 +1,16 @@
 class Labrecorder < Formula
   desc "Application for streaming one or more LSL streams to disk in XDF file format"
   homepage "https://github.com/labstreaminglayer/App-LabRecorder"
-  url "https://github.com/labstreaminglayer/App-LabRecorder/archive/refs/tags/v1.14.2.tar.gz"
-  sha256 "7fafde37dffca24170909aff01b28a410232bfcd8727a0ca58c23fe18e4946af"
+  url "https://github.com/labstreaminglayer/App-LabRecorder/archive/refs/tags/v1.16.1.tar.gz"
+  sha256 "f4b4f5eaf0623e3366c54af927f52274d24607dc111abff7911b3c83c4366ec9"
   license "MIT"
 
   head "https://github.com/labstreaminglayer/App-LabRecorder.git"
 
-  bottle do
-    root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.14"
-    sha256 cellar: :any, big_sur: "0e4082670b09cd11c3da7855d1a4baa2ccf5cf5bfcd6c2db0d87abffd5c82204"
-  end
+  # bottle do
+  #   root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.14"
+  #   sha256 cellar: :any, big_sur: "0e4082670b09cd11c3da7855d1a4baa2ccf5cf5bfcd6c2db0d87abffd5c82204"
+  # end
 
   depends_on "cmake" => :build
   depends_on "lsl"
