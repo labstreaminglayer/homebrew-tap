@@ -5,7 +5,7 @@ class Labrecorder < Formula
   version "1.16.1"
   sha256 "f4b4f5eaf0623e3366c54af927f52274d24607dc111abff7911b3c83c4366ec9"
   license "MIT"
-  revision 0
+  revision 1
 
   head "https://github.com/labstreaminglayer/App-LabRecorder.git"
 
