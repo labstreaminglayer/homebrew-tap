@@ -2,7 +2,7 @@
 class LslBeta < Formula
   desc "Library for multi-modal time-synched data transmission over the network"
   homepage "https://labstreaminglayer.readthedocs.io/"
-  url "https://github.com/sccn/liblsl", using: :git
+  head "https://github.com/sccn/liblsl.git", :tag => "v1.16.2b1"
   version "1.16.2b1"
   sha256 "ebcc3b84a340e74c0cde1f388c6a3ff55d60e134566ddb98f97a5f4f93a2734d"
   license "MIT"
