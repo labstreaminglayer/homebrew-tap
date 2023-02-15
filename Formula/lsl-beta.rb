@@ -1,5 +1,5 @@
 # https://github.com/syhw/homebrew/blob/master/Library/Contributions/example-formula.rb
-class Lsl < Formula
+class LslBeta < Formula
   desc "Library for multi-modal time-synched data transmission over the network"
   homepage "https://labstreaminglayer.readthedocs.io/"
   url "https://github.com/sccn/liblsl", using: :git
