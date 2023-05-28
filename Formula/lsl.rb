@@ -3,8 +3,8 @@ class Lsl < Formula
   desc "Library for multi-modal time-synched data transmission over the network"
   homepage "https://labstreaminglayer.readthedocs.io/"
   url "https://github.com/sccn/liblsl", using: :git
-  version "1.16.1"
-  sha256 "7410620c26f8e86ae431e7476bf685918e180bd676982a7f7a7817299c8707c5"
+  version "1.16.2"
+  sha256 "923aa4c81c0fef651c325e3c27aa5b96771540ca2a0933d1b327db27c6dac839"
   license "MIT"
   revision 0
   # NOTE: use `openssl dgst -sha256 <targ.gz file downloaded from release>` to get sha256
