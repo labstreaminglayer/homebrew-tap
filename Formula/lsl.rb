@@ -6,7 +6,6 @@ class Lsl < Formula
   version "1.16.2"
   sha256 "923aa4c81c0fef651c325e3c27aa5b96771540ca2a0933d1b327db27c6dac839"
   license "MIT"
-  revision 0
   # NOTE: use `openssl dgst -sha256 <targ.gz file downloaded from release>` to get sha256
 
   head "https://github.com/sccn/liblsl.git"
