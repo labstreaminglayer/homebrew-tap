@@ -2,13 +2,13 @@
 class Lsl < Formula
   desc "Library for multi-modal time-synched data transmission over the network"
   homepage "https://labstreaminglayer.readthedocs.io/"
-  url "https://github.com/sccn/liblsl", using: :git
+  url "https://github.com/sccn/liblsl", using: :git, branch: "main"
   version "1.16.2"
   sha256 "923aa4c81c0fef651c325e3c27aa5b96771540ca2a0933d1b327db27c6dac839"
   license "MIT"
   # NOTE: use `openssl dgst -sha256 <targ.gz file downloaded from release>` to get sha256
 
-  head "https://github.com/sccn/liblsl.git"
+  head "https://github.com/sccn/liblsl.git", branch: "main"
 
   # To make a bottle:
   # 1 - `brew install --build-bottle lsl`
