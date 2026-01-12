@@ -1,8 +1,8 @@
 class Lsl < Formula
   desc "Library for multi-modal time-synched data transmission over the network"
   homepage "https://labstreaminglayer.readthedocs.io/"
-  url "https://github.com/sccn/liblsl/archive/refs/tags/v1.17.3.tar.gz"
-  sha256 "b163463d886a08382a76a9b7e4a1286d170de219dd276687b8a6c2f9b664be95"
+  url "https://github.com/sccn/liblsl/archive/refs/tags/v1.17.4.tar.gz"
+  sha256 "43720576b6a568923a68de8f37e894c0e583ff07ed219d3f5121a3a45f009c7b"
   license "MIT"
   head "https://github.com/sccn/liblsl.git", branch: "main"
 
