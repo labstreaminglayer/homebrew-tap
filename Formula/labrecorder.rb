@@ -45,5 +45,6 @@ class Labrecorder < Formula
 
   test do
     assert_match "Usage", shell_output("#{bin}/LabRecorderCLI -h", 1)
+    assert_path_exists prefix/"LabRecorder.app/Contents/MacOS/LabRecorder" if OS.mac?
   end
 end

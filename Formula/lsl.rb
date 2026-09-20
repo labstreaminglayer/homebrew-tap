@@ -13,6 +13,7 @@ class Lsl < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :test
   depends_on "pugixml"
 
   def install
