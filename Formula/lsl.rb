@@ -12,6 +12,14 @@ class Lsl < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/lsl-1.18.0.b3"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f8e8c42d8b4b941a79ae9b0490d4924d26fa2853c7cfcb17736a99d08860a054"
+    sha256 cellar: :any, arm64_sequoia: "937875495d7a27a43204c76a29a85bdd198db6a7a9e14e8e27eea632d75bd1aa"
+    sha256 cellar: :any, x86_64_linux:  "dbfa3a4ccf81849926388ab67bc1c1dd72767cfdd987bf0185d34c228ce85db8"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
   depends_on "pugixml"
