@@ -17,9 +17,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Bottles built on an older macOS are poured on newer releases, so build on
-        # the oldest supported runner of each architecture plus the current release.
-        os: [ macos-15, macos-26, macos-15-intel ]
+        # Bottles built on an older macOS are poured on newer releases. Intel macOS is
+        # omitted: Homebrew no longer bottles qtbase/pkgconf there, so test-bot skips it.
+        os: [ macos-15, macos-26 ]
         include:
           - os: ubuntu-latest
             container:
