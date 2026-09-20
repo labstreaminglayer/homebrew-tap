@@ -20,13 +20,22 @@ Launchpad, symlink the app into `/Applications` (see `brew info labrecorder`).
 
 ## Developing
 
-Formulae build from source. To update one:
+Formulae are bottled (pre-built) for macOS on Apple Silicon and Intel, and for
+x86_64 Linux. `brew install` falls back to building from source on other platforms.
 
-1. Bump `url` and `sha256` (`curl -sL <url> | shasum -a 256`). `brew livecheck <formula>`
-   reports the latest upstream tag.
+To update a formula:
+
+1. On a branch, bump `url` and `sha256` (`curl -sL <url> | shasum -a 256`).
+   `brew livecheck <formula>` reports the latest upstream tag. Delete any existing
+   `bottle do ... end` block.
 2. Run `brew install --build-from-source <formula>`, `brew test <formula>`,
    `brew audit --strict --online <formula>` and `brew style <formula>`.
-3. Open a PR; CI runs `brew test-bot` on macOS and Linux.
+3. Open a PR. CI runs `brew test-bot` on each platform and uploads the bottles as
+   workflow artifacts.
+4. Once CI is green, run the **brew pr-pull** workflow (Actions tab, "Run workflow")
+   with the PR number. It uploads the bottles to a GitHub release on this repo, adds
+   the `bottle` block to the formula, and pushes the result to `main`. Do not merge
+   the PR by hand.
 
 `labrecorder` requires `lsl` >= 1.18 (the first release with the `LSL_BUNDLE_DEPENDENCIES`
 CMake option, which stops the app from bundling its own copy of liblsl and Qt).
