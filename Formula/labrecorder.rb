@@ -1,30 +1,49 @@
 class Labrecorder < Formula
   desc "Application for streaming one or more LSL streams to disk in XDF file format"
   homepage "https://github.com/labstreaminglayer/App-LabRecorder"
-  url "https://github.com/labstreaminglayer/App-LabRecorder", using: :git
-  version "1.16.5"
-  sha256 "9e6e4f4673115668e72f743cdaa724d595f6160c8957ac2b59af7819b71bd82a"
+  url "https://github.com/labstreaminglayer/App-LabRecorder/archive/refs/tags/v1.17.1.tar.gz"
+  sha256 "ef2f95e60be60494138a323e2aa566c5dea9bd6eac4ff889f921e0a155e64222"
   license "MIT"
-  revision 9
+  head "https://github.com/labstreaminglayer/App-LabRecorder.git", branch: "master"
 
-  head "https://github.com/labstreaminglayer/App-LabRecorder.git"
-
-  # bottle do
-  #   root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/v1.14"
-  #   sha256 cellar: :any, big_sur: "0e4082670b09cd11c3da7855d1a4baa2ccf5cf5bfcd6c2db0d87abffd5c82204"
-  # end
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   depends_on "cmake" => :build
   depends_on "lsl"
-  depends_on "qt"
+  depends_on "qtbase"
 
   def install
-    # system "echo", ENV['HOMEBREW_FORMULA_PREFIX']
-    system "cmake", "-S", ".", "-B", "build", "-DLSL_DEPLOYAPPLIBS=OFF", *std_cmake_args
-    system "cmake", "--build", "build", "--target", "install", "--config", "Release", "-j"
+    args = %w[
+      -DLSL_BUNDLE_DEPENDENCIES=OFF
+      -DLSL_FETCH_IF_MISSING=OFF
+    ]
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    # Upstream installs everything at the prefix root on macOS
+    if OS.mac?
+      bin.install prefix/"LabRecorderCLI"
+      rm prefix/"libxdfwriter.a"
+      bin.write_exec_script prefix/"LabRecorder.app/Contents/MacOS/LabRecorder"
+    end
+  end
+
+  def caveats
+    on_macos do
+      <<~EOS
+        LabRecorder.app is installed to:
+          #{opt_prefix}/LabRecorder.app
+        Launch it with `LabRecorder` or link it into /Applications with:
+          ln -s #{opt_prefix}/LabRecorder.app /Applications/LabRecorder.app
+      EOS
+    end
   end
 
   test do
-    system "false"
+    assert_match "Usage", shell_output("#{bin}/LabRecorderCLI -h", 1)
   end
 end
