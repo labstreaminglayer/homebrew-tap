@@ -1,8 +1,8 @@
 class Labrecorder < Formula
   desc "Application for streaming one or more LSL streams to disk in XDF file format"
   homepage "https://github.com/labstreaminglayer/App-LabRecorder"
-  url "https://github.com/labstreaminglayer/App-LabRecorder/archive/refs/tags/v1.17.1.tar.gz"
-  sha256 "ef2f95e60be60494138a323e2aa566c5dea9bd6eac4ff889f921e0a155e64222"
+  url "https://github.com/labstreaminglayer/App-LabRecorder/archive/refs/tags/v1.18.0.tar.gz"
+  sha256 "06e177798101ccad091ad71f9e8d56072024479a904f317984c29f0570e4e334"
   license "MIT"
   head "https://github.com/labstreaminglayer/App-LabRecorder.git", branch: "master"
 
