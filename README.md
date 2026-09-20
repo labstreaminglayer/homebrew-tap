@@ -20,8 +20,9 @@ Launchpad, symlink the app into `/Applications` (see `brew info labrecorder`).
 
 ## Developing
 
-Formulae are bottled (pre-built) for macOS on Apple Silicon and Intel, and for
-x86_64 Linux. `brew install` falls back to building from source on other platforms.
+Formulae are bottled (pre-built) for Apple Silicon macOS and x86_64 Linux. Elsewhere
+(including Intel Macs, which Homebrew no longer bottles Qt for) `brew install` builds
+from source.
 
 To update a formula:
 
