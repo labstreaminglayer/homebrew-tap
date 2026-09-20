@@ -11,6 +11,14 @@ class Labrecorder < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/labrecorder-1.18.0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "1b2899052fa216f33173f339cebb3d08ed75f384119b3eda0830dbc047da6d1b"
+    sha256 cellar: :any, arm64_sequoia: "66b828c0abed4b215f4ba5809b37a190dbc222436b841c74c913b7f5cba4ef28"
+    sha256 cellar: :any, x86_64_linux:  "88b037c5969efc04bd20dbd74671c653d6c18a325a5679c0ea2b2e6635fcc897"
+  end
+
   depends_on "cmake" => :build
   depends_on "lsl"
   depends_on "qtbase"
