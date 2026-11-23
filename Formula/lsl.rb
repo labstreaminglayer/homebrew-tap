@@ -20,8 +20,9 @@ class Lsl < Formula
     # On macOS, install lsl.framework (in Frameworks/). liblsl also installs lib/liblsl.dylib,
     # the headers in include/, lib/cmake/lsl and lsl.pc pointing into it, so -llsl, pkg-config
     # and find_package(LSL) work as with a plain dylib.
+    framework = OS.mac? ? "ON" : "OFF"
     args = %W[
-      -DLSL_FRAMEWORK=#{OS.mac? ? "ON" : "OFF"}
+      -DLSL_FRAMEWORK=#{framework}
       -DLSL_UNIXFOLDERS=ON
       -DLSL_FETCH_PUGIXML=OFF
     ]
