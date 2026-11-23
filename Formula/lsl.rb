@@ -1,9 +1,9 @@
 class Lsl < Formula
   desc "Library for multi-modal time-synched data transmission over the network"
   homepage "https://labstreaminglayer.readthedocs.io/"
-  url "https://github.com/sccn/liblsl/archive/refs/tags/v1.18.0.b7.tar.gz"
-  version "1.18.0.b7"
-  sha256 "b347a356543bab478b7b10bc17ae58ef87333f89354d439ca9cd8adfa7c65a73"
+  url "https://github.com/sccn/liblsl/archive/refs/tags/v1.18.0.b8.tar.gz"
+  version "1.18.0.b8"
+  sha256 "5cc40e6ed4ffcee5173de4bb1a6743d7ea9b65f8ada6d0282d68e5ba5d88e438"
   license "MIT"
   head "https://github.com/sccn/liblsl.git", branch: "main"
 
@@ -20,8 +20,9 @@ class Lsl < Formula
     # On macOS, install lsl.framework (in Frameworks/). liblsl also installs lib/liblsl.dylib,
     # the headers in include/, lib/cmake/lsl and lsl.pc pointing into it, so -llsl, pkg-config
     # and find_package(LSL) work as with a plain dylib.
+    framework = OS.mac? ? "ON" : "OFF"
     args = %W[
-      -DLSL_FRAMEWORK=#{OS.mac? ? "ON" : "OFF"}
+      -DLSL_FRAMEWORK=#{framework}
       -DLSL_UNIXFOLDERS=ON
       -DLSL_FETCH_PUGIXML=OFF
     ]
