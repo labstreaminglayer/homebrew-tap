@@ -1,22 +1,14 @@
 class Labrecorder < Formula
   desc "Application for streaming one or more LSL streams to disk in XDF file format"
   homepage "https://github.com/labstreaminglayer/App-LabRecorder"
-  url "https://github.com/labstreaminglayer/App-LabRecorder/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "06e177798101ccad091ad71f9e8d56072024479a904f317984c29f0570e4e334"
+  url "https://github.com/labstreaminglayer/App-LabRecorder/archive/refs/tags/v1.18.1.tar.gz"
+  sha256 "1fbb65116ed66a33d1501430067a4b9179c79d7192f2ae0f6d351b2503d980a9"
   license "MIT"
   head "https://github.com/labstreaminglayer/App-LabRecorder.git", branch: "master"
 
   livecheck do
     url :stable
     strategy :github_latest
-  end
-
-  bottle do
-    root_url "https://github.com/labstreaminglayer/homebrew-tap/releases/download/labrecorder-1.18.0"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "1b2899052fa216f33173f339cebb3d08ed75f384119b3eda0830dbc047da6d1b"
-    sha256 cellar: :any, arm64_sequoia: "66b828c0abed4b215f4ba5809b37a190dbc222436b841c74c913b7f5cba4ef28"
-    sha256 cellar: :any, x86_64_linux:  "88b037c5969efc04bd20dbd74671c653d6c18a325a5679c0ea2b2e6635fcc897"
   end
 
   depends_on "cmake" => :build
